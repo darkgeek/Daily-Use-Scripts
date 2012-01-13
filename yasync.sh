@@ -1,5 +1,5 @@
 #!/bin/sh
-# This is the Main Script, which accepts two parameter, SourceDir as the first while DestDir as another one. It's used to sync between SourceDir and DestDir, with reference to SourceDir. Futhermore, it's wise to treat DestDir as the exact duplication or "mirror" of the SourceDir
+# This is the Main Script, which accepts two parameters, SourceDir as the first while DestDir as another one. It's used to sync between SourceDir and DestDir, with reference to SourceDir. Futhermore, it's wise to treat DestDir as the exact duplication or "mirror" of the SourceDir
 
 # The path of two important shell program, should be removed in the future
 BackupProg=/usr/home/justin/bin/backup.sh
