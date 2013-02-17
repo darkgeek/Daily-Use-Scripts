@@ -17,7 +17,7 @@ alias nload	nload -u K tun0
 # A righteous umask
 umask 22
 
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin)
+set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin /usr/pbi/eclipse-i386/bin)
 
 setenv	EDITOR	vi
 setenv	PAGER	less
