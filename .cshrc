@@ -13,18 +13,21 @@ alias la	ls -aF
 alias lf	ls -FA
 alias ll	ls -lAF
 alias nload	nload -u K tun0
+alias top	top -P
 
 # A righteous umask
 umask 22
 
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin /usr/pbi/eclipse-i386/bin)
+set path = (/usr/pbi/eclipse-i386/openjdk6/bin /sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin)
 
-setenv	EDITOR	vi
+setenv	EDITOR	vim
 setenv	PAGER	less
 setenv	BLOCKSIZE	K
 setenv LSCOLORS ExGxFxdxCxegedabagExEx
 setenv CLICOLOR yes
 setenv GREP_OPTIONS --color=auto
+
+limit coredumpsize 0
 
 set cr = "%{\e[31m%}" #Red
 set cg = "%{\e[32m%}" #Green
