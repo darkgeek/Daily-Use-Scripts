@@ -14,6 +14,7 @@ alias lf	ls -FA
 alias ll	ls -lAF
 alias nload	nload -u K tun0
 alias top	top -P
+alias grep	bsdgrep
 
 # A righteous umask
 umask 22
