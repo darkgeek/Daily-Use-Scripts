@@ -19,7 +19,7 @@ alias grep	bsdgrep
 # A righteous umask
 umask 22
 
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin /usr/pbi/eclipse-i386/openjdk6/bin)
+set path = (/usr/pbi/eclipse-i386/openjdk6/bin /sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin)
 
 setenv	EDITOR	vim
 setenv	PAGER	less
