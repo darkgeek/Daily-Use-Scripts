@@ -1,3 +1,0 @@
-#!/bin/sh
-
-lrcdis.sh 2> /dev/null
