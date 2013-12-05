@@ -15,6 +15,7 @@ PS1='[\u@\h \W]\$ '
 alias nload="nload -u K"
 alias feh="feh -F"
 export PATH=$PATH:/home/justin/bin
+export EDITOR='vim'
 
 export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE=fcitx
