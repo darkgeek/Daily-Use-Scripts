@@ -2,6 +2,14 @@
 # Author: Justin Yang(darkgeek)
 # Download and merge splitted videos together
 
+EXPECTED_ARGS=1
+
+if [ $# -ne  $EXPECTED_ARGS ]
+then
+	echo "Usage: `basename $0` {Your m3u like video list file path}"
+	exit 1
+fi
+
 echo "Trying to download viedo files..."
 wget -c -i "$1"
 
