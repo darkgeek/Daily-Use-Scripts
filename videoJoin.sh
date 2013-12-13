@@ -11,7 +11,7 @@ then
 fi
 
 echo "Trying to download viedo files..."
-wget -c -i "$1"
+wget -U firefox -c -i "$1"
 
 echo "Merging..."
 cat "$1" | awk 'BEGIN{FS="/"} {if ($1 !~ /^#/) print $NF}' | xargs -t -i printf "file '%s'\n" {} > mylist.txt
