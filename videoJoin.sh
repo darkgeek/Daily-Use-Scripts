@@ -3,6 +3,10 @@
 # Download and merge splitted videos together
 
 EXPECTED_ARGS=1
+TMP_FILE="/tmp/videos.tmp"
+JOIN_TMP_FILE="mylist.txt"
+OUTPUT_FILE="output.mp4"
+
 
 if [ $# -ne  $EXPECTED_ARGS ]
 then
@@ -11,13 +15,14 @@ then
 fi
 
 echo "Trying to download viedo files..."
-wget -U firefox -c -i "$1"
+cat "$1" | awk 'BEGIN{number=0} {if ($1 !~ /^#/) {cmd="wget -c -U firefox " $0 " -O " number ; system(cmd); print number++ >> "'"$TMP_FILE"'"}}'
 
 echo "Merging..."
-cat "$1" | awk 'BEGIN{FS="/"} {if ($1 !~ /^#/) print $NF}' | xargs -t -i printf "file '%s'\n" {} > mylist.txt
-ffmpeg -f concat -i mylist.txt -c copy output.mp4
+cat "$TMP_FILE" | xargs -t -i printf "file '%s'\n" {} > "$JOIN_TMP_FILE"
+ffmpeg -f concat -i "$JOIN_TMP_FILE" -c copy "$OUTPUT_FILE"
 
 echo "Removing temp files..."
-cat "$1" | awk 'BEGIN{FS="/"} {if ($1 !~ /^#/) print $NF}' | xargs -t -i rm {}
+cat "$TMP_FILE" | xargs -t -i rm {}
+rm "$TMP_FILE"
 rm "$1"
-rm mylist.txt
+rm "$JOIN_TMP_FILE"
