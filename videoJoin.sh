@@ -15,14 +15,14 @@ then
 	exit 1
 fi
 
-echo "Trying to download viedo files..."
-cat "$1" | awk 'BEGIN{number=0} {if ($1 !~ /^#/) {cmd="echo wget -c -U" " '"$BROWSER_AGENT"' " $0 " -O " number ; system(cmd); print number++ >> "'"$TMP_FILE"'"}}'
+echo "[`basename $0`] Trying to download viedo files..."
+cat "$1" | awk 'BEGIN{number=0} {if ($1 !~ /^#/) {cmd="wget -c -U" " '"$BROWSER_AGENT"' " $0 " -O " number ; system(cmd); print number++ >> "'"$TMP_FILE"'"}}'
 
-echo "Merging..."
+echo "[`basename $0`] Merging..."
 cat "$TMP_FILE" | xargs -t -i printf "file '%s'\n" {} > "$JOIN_TMP_FILE"
 ffmpeg -f concat -i "$JOIN_TMP_FILE" -c copy "$OUTPUT_FILE"
 
-echo "Removing temp files..."
+echo "[`basename $0`] Removing temp files..."
 cat "$TMP_FILE" | xargs -t -i rm {}
 rm "$TMP_FILE"
 rm "$1"
