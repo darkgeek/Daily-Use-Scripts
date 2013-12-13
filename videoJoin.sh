@@ -6,6 +6,7 @@ EXPECTED_ARGS=1
 TMP_FILE="/tmp/videos.tmp"
 JOIN_TMP_FILE="mylist.txt"
 OUTPUT_FILE="output.mp4"
+BROWSER_AGENT="firefox"
 
 
 if [ $# -ne  $EXPECTED_ARGS ]
@@ -15,7 +16,7 @@ then
 fi
 
 echo "Trying to download viedo files..."
-cat "$1" | awk 'BEGIN{number=0} {if ($1 !~ /^#/) {cmd="wget -c -U firefox " $0 " -O " number ; system(cmd); print number++ >> "'"$TMP_FILE"'"}}'
+cat "$1" | awk 'BEGIN{number=0} {if ($1 !~ /^#/) {cmd="echo wget -c -U" " '"$BROWSER_AGENT"' " $0 " -O " number ; system(cmd); print number++ >> "'"$TMP_FILE"'"}}'
 
 echo "Merging..."
 cat "$TMP_FILE" | xargs -t -i printf "file '%s'\n" {} > "$JOIN_TMP_FILE"
