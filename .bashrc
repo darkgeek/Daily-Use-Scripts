@@ -14,7 +14,8 @@ alias fgrep='fgrep --color=auto'
 PS1='[\u@\h \W]\$ '
 alias nload="nload -u K"
 alias feh="feh -F"
-export PATH=$PATH:/home/justin/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin
+export PATH=$PATH:/home/justin/bin
+export EDITOR='vim'
 
 export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE=fcitx
