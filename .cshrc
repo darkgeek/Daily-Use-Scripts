@@ -19,7 +19,7 @@ alias grep	bsdgrep
 # A righteous umask
 umask 22
 
-set path = (/usr/pbi/eclipse-i386/openjdk6/bin /sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin)
+set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin)
 
 setenv	EDITOR	vim
 setenv	PAGER	less
@@ -65,3 +65,4 @@ if ($?prompt) then
 endif
 
 fortune | cowsay
+alias portsupdate 'cd /usr/ports && sudo make update && sudo make fetchindex && vim /usr/ports/UPDATING'
