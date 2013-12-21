@@ -65,4 +65,4 @@ if ($?prompt) then
 endif
 
 fortune | cowsay
-alias portsupdate 'cd /usr/ports && sudo make update && sudo make fetchindex && less /usr/ports/UPDATING && cd -'
+alias portsupdate 'cd /usr/ports && sudo make update && sudo make fetchindex && cd - && less /usr/ports/UPDATING'
