@@ -21,4 +21,6 @@ export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 
+alias connectlabfs='sudo mount -t cifs //$IP/Common /media/disk/ -o username=$PWD'
+
 fortune | cowsay
