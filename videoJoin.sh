@@ -3,10 +3,11 @@
 # Download and merge splitted videos together
 
 EXPECTED_ARGS=1
-TMP_FILE="/tmp/videos.tmp"
+TMP_FILE="videos.tmp"
 JOIN_TMP_FILE="mylist.txt"
 OUTPUT_FILE="output.mp4"
 BROWSER_AGENT="firefox"
+IGNORE_LINE_PATTERN="^#"
 
 
 if [ $# -ne  $EXPECTED_ARGS ]
@@ -15,8 +16,21 @@ then
 	exit 1
 fi
 
+echo "[`basename $0`] Cleaning old temp files..."
+rm "$TMP_FILE" > /dev/null 2>&1
+rm "$JOIN_TMP_FILE" > /dev/null 2>&1
+
 echo "[`basename $0`] Trying to download viedo files..."
-cat "$1" | awk 'BEGIN{number=0} {if ($1 !~ /^#/) {cmd="wget -c -U" " '"$BROWSER_AGENT"' " $0 " -O " number ; system(cmd); print number++ >> "'"$TMP_FILE"'"}}'
+number=0
+while IFS=$'\r\n' read line; 
+do 
+	if [[ ! "$line" =~ $IGNORE_LINE_PATTERN ]] 
+	then
+		wget -c -U "$BROWSER_AGENT" "$line" -O $number
+		echo $number >> "$TMP_FILE"
+		number=$(($number + 1))
+	fi
+done < "$1"
 
 echo "[`basename $0`] Merging..."
 cat "$TMP_FILE" | xargs -t -i printf "file '%s'\n" {} > "$JOIN_TMP_FILE"
