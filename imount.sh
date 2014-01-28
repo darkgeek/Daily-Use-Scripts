@@ -11,8 +11,8 @@ if [ $is_linux -eq 0 ]; then
 else
 	ls /dev/da0s1 > /dev/null 2>&1
 	have_slice=$?
-	MOUNT_CMD_SLICE="sudo mount_msdosfs -m 777 -L zh_CN.GBK /dev/da0s1 /media/disk"
-	MOUNT_CMD_NO_SLICE="sudo mount_msdosfs -m 777 -L zh_CN.GBK /dev/da0 /media/disk" 
+	MOUNT_CMD_SLICE="sudo mount_msdosfs -m 777 -L zh_CN.UTF-8 /dev/da0s1 /media/disk"
+	MOUNT_CMD_NO_SLICE="sudo mount_msdosfs -m 777 -L zh_CN.UTF-8 /dev/da0 /media/disk" 
 fi
 
 if [ $have_slice -eq 0 ]; then
