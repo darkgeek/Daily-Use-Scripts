@@ -12,14 +12,14 @@ alias ls	ls -G
 alias la	ls -aF
 alias lf	ls -FA
 alias ll	ls -lAF
-alias nload	nload -u K tun0
 alias top	top -P
 alias grep	bsdgrep
+alias netcheck	systat -if 1
 
 # A righteous umask
 umask 22
 
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin)
+set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/Apps/scripts)
 
 setenv	EDITOR	vim
 setenv	PAGER	less
@@ -27,6 +27,9 @@ setenv	BLOCKSIZE	K
 setenv LSCOLORS ExGxFxdxCxegedabagExEx
 setenv CLICOLOR yes
 setenv GREP_OPTIONS --color=auto
+setenv XMODIFIERS @im=fcitx
+setenv GTK_IM_MODULE fcitx
+setenv GTK3_IM_MODULE fcitx
 
 limit coredumpsize 0
 
