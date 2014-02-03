@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # videoJoin.sh
 # Author: Justin Yang(darkgeek)
 # Download and merge splitted videos together
@@ -24,20 +26,21 @@ echo "[`basename $0`] Trying to download viedo files..."
 number=0
 while IFS=$'\r\n' read line; 
 do 
-	if [[ ! "$line" =~ $IGNORE_LINE_PATTERN ]] 
+#	if [[ ! "$line" =~ $IGNORE_LINE_PATTERN ]] 
+	if [ $(expr "$line" : $IGNORE_LINE_PATTERN) -le 0 ]
 	then
 		wget -c -U "$BROWSER_AGENT" "$line" -O $number
 		echo $number >> "$TMP_FILE"
-		number=$(($number + 1))
+		number=$(expr $number + 1)
 	fi
 done < "$1"
 
 echo "[`basename $0`] Merging..."
-cat "$TMP_FILE" | xargs -t -i printf "file '%s'\n" {} > "$JOIN_TMP_FILE"
+cat "$TMP_FILE" | xargs -t -I{} printf "file '%s'\n" {} > "$JOIN_TMP_FILE"
 ffmpeg -f concat -i "$JOIN_TMP_FILE" -c copy "$OUTPUT_FILE"
 
 echo "[`basename $0`] Removing temp files..."
-cat "$TMP_FILE" | xargs -t -i rm {}
+cat "$TMP_FILE" | xargs -t -I{} rm {}
 rm "$TMP_FILE"
-rm "$1"
+#rm "$1"
 rm "$JOIN_TMP_FILE"
