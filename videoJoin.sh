@@ -42,5 +42,5 @@ ffmpeg -f concat -i "$JOIN_TMP_FILE" -c copy "$OUTPUT_FILE"
 echo "[`basename $0`] Removing temp files..."
 cat "$TMP_FILE" | xargs -t -I{} rm {}
 rm "$TMP_FILE"
-#rm "$1"
+rm "$1"
 rm "$JOIN_TMP_FILE"
