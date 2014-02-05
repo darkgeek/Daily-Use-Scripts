@@ -13,7 +13,6 @@ alias la	ls -aF
 alias lf	ls -FA
 alias ll	ls -lAF
 alias top	top -P
-alias grep	bsdgrep
 alias netcheck	systat -if 1
 
 # A righteous umask
@@ -68,4 +67,3 @@ if ($?prompt) then
 endif
 
 fortune | cowsay
-alias portsupdate 'cd /usr/ports && sudo make update && sudo make fetchindex && cd - && less /usr/ports/UPDATING'
