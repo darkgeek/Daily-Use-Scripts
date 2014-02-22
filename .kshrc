@@ -3,7 +3,7 @@
 export PKG_PATH=http://ftp.jaist.ac.jp/pub/OpenBSD/5.4/packages/amd64/
 export PAGER=less
 export PS1='\n\u@\H\n\W \\$ '
-export EDITOR=vim
+#export EDITOR=vim
 export HISTFILE=$HOME/.ksh_history
 
 #colorls is required to be installed via pkg_add
