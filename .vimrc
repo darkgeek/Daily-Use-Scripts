@@ -1,3 +1,4 @@
+set nocompatible
 set nu
 syntax on
 set autoindent
