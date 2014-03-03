@@ -1,6 +1,6 @@
 . /etc/ksh.kshrc
 
-export PKG_PATH=http://ftp.jaist.ac.jp/pub/OpenBSD/5.4/packages/amd64/
+export PKG_PATH=http://ftp.jaist.ac.jp/pub/OpenBSD/5.4/packages/`machine -a`/
 export PAGER=less
 export PS1='\n\u@\H\n\W \\$ '
 export EDITOR=vim
