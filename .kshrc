@@ -13,12 +13,14 @@ alias la='colorls -G -a'
 
 bind "^[[3~"=delete-char-forward
 
-if [ $TERM = 'xterm' ] && [ $USER = 'root' ];then
+if [ $TERM = 'vt220' ];then
+	export TERM=wsvt25
+fi
+
+if [ $USER = 'root' ];then
 	export PS1='\n\u@\h.\[$(tput setaf 1)\]\l\[$(tput op)\\n\w \\$ '
-elif [ $TERM = 'xterm' ];then
+else	
 	export PS1='\n\u@\h.\[$(tput setaf 2)\]\l\[$(tput op)\\n\w \\$ '
-else
-	export PS1='\n\u@\h.\l\n\w \\$ '
 fi
 
 set -o csh-history
