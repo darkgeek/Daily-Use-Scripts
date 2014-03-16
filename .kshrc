@@ -6,10 +6,10 @@ export EDITOR=vim
 export HISTFILE=$HOME/.ksh_history
 export PATH=$PATH:/usr/local/jdk-1.7.0/bin/
 
-#colorls is required to be installed via pkg_add
-alias ls='colorls -G'
-alias ll='colorls -G -a -l -h'
-alias la='colorls -G -a'
+#gls is required to be installed via pkg_add -v coreutils
+alias ls='gls --color=auto'
+alias ll='gls --color=auto -a -l -h'
+alias la='gls --color=auto -a'
 
 bind "^[[3~"=delete-char-forward
 
