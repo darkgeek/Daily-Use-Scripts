@@ -15,6 +15,8 @@ bind "^[[3~"=delete-char-forward
 
 if [ $TERM = 'vt220' ];then
 	export TERM=wsvt25
+elif [ $TERM = 'xterm-256color' ];then
+	export TERM=xterm
 fi
 
 if [ $USER = 'root' ];then
