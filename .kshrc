@@ -1,6 +1,6 @@
 . /etc/ksh.kshrc
 
-export PKG_PATH=http://ftp.jaist.ac.jp/pub/OpenBSD/5.4/packages/`machine -a`/
+export PKG_PATH=http://mirror.internode.on.net/pub/OpenBSD/5.4/packages/`machine -a`/
 export PAGER=less
 export EDITOR=vim
 export HISTFILE=$HOME/.ksh_history
