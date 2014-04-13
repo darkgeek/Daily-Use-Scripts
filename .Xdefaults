@@ -33,7 +33,7 @@ xterm*fontMenu*fontdefault*Label: Default
 xterm*faceName:DejaVu Sans Mono :antialias=True:pixelsize=15
 !xterm*faceName: monofur:antialias=True:pixelsize=20
 !xter*boldFont: DejaVu Sans Mono:style=Bold:pixelsize=15
-xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13:antialias=True
+xterm*faceNameDoublesize: WenQuanYi Micro Hei Mono:pixelsize=13:antialias=True
 xterm*xftAntialias: true
 xterm*cjkWidth:false
 
