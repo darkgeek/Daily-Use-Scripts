@@ -1,6 +1,9 @@
 . /etc/ksh.kshrc
 
-export PKG_PATH=http://mirror.internode.on.net/pub/OpenBSD/`uname -r`/packages/`machine -a`/
+PKG_PATH=http://ftp.jaist.ac.jp/pub/OpenBSD/`uname -r`/packages/`machine -a`/
+PKG_PATH=https://stable.mtier.org/updates/$(uname -r)/$(arch -s):${PKG_PATH}
+export PKG_PATH
+
 export PAGER=less
 export EDITOR=vim
 export HISTFILE=$HOME/.ksh_history
@@ -10,6 +13,7 @@ export PATH=$PATH:/usr/local/jdk-1.7.0/bin/
 alias ls='gls --color=auto'
 alias ll='gls --color=auto -a -l -h'
 alias la='gls --color=auto -a'
+alias netcheck='systat if 1'
 
 bind "^[[3~"=delete-char-forward
 
