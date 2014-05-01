@@ -14,7 +14,6 @@ alias fgrep='fgrep --color=auto'
 PS1='[\u@\h \W]\$ '
 alias netcheck="nload -u K"
 alias feh="feh -F"
-export PATH=$PATH:/home/justin/bin
 export EDITOR='vim'
 export WINEARCH=win32
 
