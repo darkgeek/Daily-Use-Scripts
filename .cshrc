@@ -18,7 +18,7 @@ alias netcheck	systat -if 1
 # A righteous umask
 umask 22
 
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/Apps/scripts)
+set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/Apps/bin)
 
 setenv	EDITOR	vim
 setenv	PAGER	less
