@@ -1,0 +1,21 @@
+export PAGER=less
+export EDITOR=vim
+export HISTFILE=$HOME/.ksh_history
+
+#gls is required to be installed via pkg_add -v coreutils
+alias ls='gls --color=auto'
+alias ll='gls --color=auto -a -l -h'
+alias la='gls --color=auto -a'
+alias netcheck='systat if 1'
+
+if [ $TERM = 'vt100' ];then
+	export TERM=wsvt25
+fi	
+
+if [ `whoami` = 'root' ]; then
+	export PS1='`whoami`@`hostname` [$(tput setaf 1)$PWD$(tput op)] # '
+else
+	export PS1='$USER@`hostname` [$(tput setaf 2)$PWD$(tput op)] % '
+fi
+
+set -o emacs
