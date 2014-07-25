@@ -6,7 +6,6 @@ export HISTFILE=$HOME/.ksh_history
 alias ls='gls --color=auto'
 alias ll='gls --color=auto -a -l -h'
 alias la='gls --color=auto -a'
-alias netcheck='systat if 1'
 
 if [ $TERM = 'vt100' ];then
 	export TERM=wsvt25
