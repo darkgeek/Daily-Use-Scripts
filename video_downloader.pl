@@ -6,6 +6,7 @@ use warnings;
 use strict;
 
 use LWP::Simple qw($ua getstore get);
+use File::Basename qw(basename);
 use URI;
 
 # Process the command line
@@ -19,7 +20,7 @@ if (@ARGV > 1) {
 }
 # End of command line process
 
-my $progname = $0; 
+my $progname = basename $0; 
 my $link_pattern = '<input type="hidden" name="inf" value="(?<video_link>.*)"';
 my $seperator = '\|';
 my $success_code = 200;
