@@ -57,7 +57,7 @@ foreach my $line (split /^/, $source_document) {
 	}
 }
 
-merge_videos(@videos);
+&merge_videos(@videos);
 say "[$progname] Removing temp files...";
 unlink @videos;
 say "[$progname] Done.";
