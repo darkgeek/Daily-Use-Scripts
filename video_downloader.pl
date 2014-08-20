@@ -26,7 +26,7 @@ my $seperator = '\|';
 my $success_code = 200;
 my $uri = "http://www.flvcd.com/parse.php?format=$format&kw=$keyword";
 my @videos = qw//;
-my $output_filename = "output.mp4";
+my $output_filename = "output.avi";
 
 say "[$progname] Trying to fetch source document...";
 my $source_document = get($uri);
@@ -79,7 +79,13 @@ sub download_file {
 
 sub merge_videos {
 	my @splits = @_;
+
 	say "[$progname] Trying to merge...";
+	if (@splits == 1) {
+		rename '0', "$output_filename";
+		say "[$progname] Done.";
+		return;
+	}
 	my @merge_cmd = ('mencoder');
 
 	push @merge_cmd, '-ovc';
