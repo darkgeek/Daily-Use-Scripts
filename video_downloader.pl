@@ -1,4 +1,5 @@
 #!/usr/bin/env perl
+# Author: Justin Yang
 # Require mencoder and libwww-perl
 
 use 5.010;
