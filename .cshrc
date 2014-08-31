@@ -70,4 +70,4 @@ if ($?prompt) then
 endif
 
 fortune | cowsay
-alias portsupdate 'cd /usr/ports && sudo make update && sudo make fetchindex && cd ~ && less /usr/ports/UPDATING'
+eval `perl -I$HOME/perl5/lib/perl5 -Mlocal::lib`
