@@ -18,12 +18,12 @@ export EDITOR='vim'
 export WINEARCH=win32
 export PATH=$PATH:$HOME/Apps/bin
 
-#export XMODIFIERS="@im=ibus"
-#export GTK_IM_MODULE=ibus
-#export QT_IM_MODULE=ibus
+export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
 
 alias connectlabfs='sudo mount -t cifs //10.1.16.251/Common /media/disk/ -o username=server-603'
-alias startnet='sudo pon dsl-provider && sleep 5 && sudo ntpdate time.nist.gov'
+alias startnet='sudo pppoe-start && sleep 2 && sudo ntpdate time.nist.gov'
 alias mygputemp='/opt/vc/bin/vcgencmd measure_temp'
 alias mycputemp='cat /sys/class/thermal/thermal_zone0/temp'
 
