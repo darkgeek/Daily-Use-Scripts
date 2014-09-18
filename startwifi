@@ -1,0 +1,2 @@
+#!/bin/sh
+/home/justin/Apps/bin/startwifi.sh &

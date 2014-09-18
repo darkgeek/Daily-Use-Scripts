@@ -1,0 +1,9 @@
+[Unit]
+Description=Start Wifi Service
+
+[Service]
+Type=forking
+ExecStart=/home/justin/Apps/bin/startwifi
+
+[Install]
+WantedBy=multi-user.target
