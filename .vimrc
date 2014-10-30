@@ -18,4 +18,5 @@ command Sudow w !sudo tee % >/dev/null
 autocmd BufWritePost *
       \ if filereadable('tags') |
       \   call system('ctags -R') |
+      \   echo "Tag refreshed." |
       \ endif
