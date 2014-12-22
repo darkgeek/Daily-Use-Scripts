@@ -1,0 +1,65 @@
+#!/bin/sh
+# @author Justin Yang
+#
+# Adapted from 
+# $FreeBSD: releng/10.1/etc/rc.d/local_unbound 255825 2013-09-23 20:03:23Z des $
+#
+
+# PROVIDE: simple_cache_unbound
+# REQUIRE: FILESYSTEMS netif resolv
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="simple_cache_unbound"
+desc="simple caching forwarding resolver"
+rcvar="simple_unbound_enable"
+
+command="/usr/sbin/unbound"
+start_precmd="local_unbound_prestart"
+reload_precmd="local_unbound_configtest"
+configtest_cmd="local_unbound_configtest"
+setup_cmd="local_unbound_setup"
+pidfile="/var/run/${name}.pid"
+
+: ${local_unbound_workdir:=/var/unbound}
+: ${local_unbound_config:=${local_unbound_workdir}/unbound.conf}
+
+load_rc_config $name
+
+do_as_unbound()
+{
+	echo "$@" | su -m unbound
+}
+
+#
+# Check the unbound configuration file
+#
+local_unbound_configtest()
+{
+	do_as_unbound /usr/sbin/unbound-checkconf ${local_unbound_config}
+}
+
+#
+# Create the unbound configuration file and update resolv.conf to
+# point to unbound.
+#
+local_unbound_setup()
+{
+	echo "Please put unbound.conf to ${local_unbound_config}."
+}
+
+#
+# Before starting, check that the configuration file and root anchor
+# exist.  If not, attempt to generate them.
+#
+local_unbound_prestart()
+{
+	# Create configuration file
+	if [ ! -f ${local_unbound_config} ] ; then
+		run_rc_command setup
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
