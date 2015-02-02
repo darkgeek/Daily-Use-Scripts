@@ -1,4 +1,5 @@
 set nocompatible
+set hlsearch
 set nu
 syntax on
 set autoindent
@@ -11,6 +12,12 @@ set sw=4
 set expandtab
 set mouse-=a
 set nobackup
+set noundofile
+set laststatus=2
+set cursorline
+set cursorcolumn
+set foldmethod=syntax
+set nofoldenable
 
 :ab cmain int<CR>main(int argc, char *argv[]) {}<Esc>i<CR><CR><Esc>ki<Tab><CR>return 0;<Esc>ki<Tab>
 nmap <C-l> :tabnext<CR>
