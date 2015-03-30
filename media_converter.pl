@@ -3,6 +3,7 @@ use 5.010;
 use strict;
 
 use Getopt::Std;
+use File::Which qw(which);
 
 my $opts = {};
 getopts('s:o:q:', $opts);
@@ -45,14 +46,29 @@ sub get_extension {
     return $extension;
 }
 
+sub logger {
+    my $message = shift;
+
+    say "====> $message";
+}
+
 sub flac_to_mp3 {
     my $temp_file = time;
     my $tmp_dir = '/tmp';
     my $quality_table = {low => 9, medium => 4, high => 2};
     my $q = $quality_table->{$quality};
+    my $flac_cmd_path = which('flac');
+    my $lame_cmd_path = which('lame');
+
+    logger("Finding flac: $flac_cmd_path");
+    logger("Finding lame: $lame_cmd_path");
+    unless ($flac_cmd_path and $lame_cmd_path) {
+        die "ERROR: Missing required external commands. Aborted.";
+    }
+
     my $cmd = "flac -d \"$source\" -o $tmp_dir/$temp_file && lame -V $q $tmp_dir/$temp_file \"$output\" && rm $tmp_dir/$temp_file"; 
 
-    say "Runing command\n: $cmd";
+    logger("Runing command:\n$cmd");
     system($cmd);
 }
 
@@ -60,7 +76,13 @@ sub flac_to_ogg {
     my $quality_table = {low => 0, medium => 3, high => 10};
     my $q = $quality_table->{$quality};
     my $cmd = "oggenc -q $q \"$source\" -o \"$output\"";
-    
-    say "Runing command\n: $cmd";
+    my $oggenc_cmd_path = which('oggenc');
+
+    logger("Finding oggenc: $oggenc_cmd_path");
+    unless ($oggenc_cmd_path) {
+        die "ERROR: Missing required external commands. Aborted.";
+    }
+
+    logger("Runing command:\n$cmd");
     system($cmd);
 }
