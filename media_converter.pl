@@ -6,6 +6,11 @@ use Getopt::Std;
 use File::Which qw(which);
 use Carp;
 
+use vars qw($VERSION);
+BEGIN {
+	$VERSION   = '1.00';
+}
+
 my $opts = {};
 getopts('s:o:q:', $opts);
 
