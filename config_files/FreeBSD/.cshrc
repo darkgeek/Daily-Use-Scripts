@@ -14,6 +14,7 @@ alias lf	ls -FA
 alias ll	ls -lAF
 alias top	top -P
 alias netcheck	systat -if 1
+alias curl  "curl --retry-delay 2 --retry 10 -L -k -O -C -"
 
 # A righteous umask
 umask 22
