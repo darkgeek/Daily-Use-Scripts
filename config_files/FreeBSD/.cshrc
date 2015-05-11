@@ -42,6 +42,7 @@ set cg = "%{\e[32m%}" #Green
 set c0 = "%{\e[0m%}"  #Default color
 set noclobber
 set nobeep
+set savehist = (100 merge)
 
 if ($?prompt) then
 	# An interactive shell -- set some stuff up
