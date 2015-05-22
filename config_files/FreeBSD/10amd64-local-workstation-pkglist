@@ -2,6 +2,7 @@ editors/vim
 devel/git
 devel/subversion
 ports-mgmt/pkg
+ports-mgmt/poudriere
 www/firefox
 www/chromium
 sysutils/coreutils
