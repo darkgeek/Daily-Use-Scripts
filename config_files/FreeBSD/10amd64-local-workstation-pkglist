@@ -2,7 +2,6 @@ editors/vim
 devel/git
 devel/subversion
 ports-mgmt/pkg
-ports-mgmt/poudriere
 www/firefox
 www/chromium
 sysutils/coreutils
@@ -53,3 +52,4 @@ games/cowsay
 ports-mgmt/poudriere
 ports-mgmt/portmaster
 ports-mgmt/dialog4ports
+www/nspluginwrapper
