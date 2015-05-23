@@ -16,7 +16,6 @@ x11/xfce4-whiskermenu-plugin
 www/node
 www/npm
 emulators/virtualbox-ose
-editors/libreoffice
 audio/deadbeef
 multimedia/mplayer
 ftp/wget
@@ -53,3 +52,7 @@ ports-mgmt/poudriere
 ports-mgmt/portmaster
 ports-mgmt/dialog4ports
 www/nspluginwrapper
+x11/nvidia-driver
+x11/nvidia-settings
+x11/nvidia-xconfig
+audio/lame
