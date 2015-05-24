@@ -56,3 +56,4 @@ x11/nvidia-driver
 x11/nvidia-settings
 x11/nvidia-xconfig
 audio/lame
+security/py-m2crypto
