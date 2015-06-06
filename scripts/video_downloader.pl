@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 # Author: Justin Yang
-# Require mencoder and libwww-perl
+# Requirements: mencoder wget libwww-perl p5-File-Which 
 
 use 5.010;
 use warnings;
@@ -8,6 +8,7 @@ use strict;
 
 use LWP::Simple qw($ua getstore get);
 use File::Basename qw(basename);
+use File::Which qw(which);
 use URI;
 
 # Process the command line
@@ -51,7 +52,7 @@ foreach my $line (split /^/, $source_document) {
 			}
 			my $rc = &download_file($link, $video_number);
 			say "[$progname] Done.";
-			die "[$progname] Unable to download videos!" if $rc != 200;
+			die "[$progname] Unable to download videos!" if $rc != 0;
 
 			push @videos, $video_number;
 			$video_number += 1;
@@ -66,14 +67,31 @@ say "[$progname] Done.";
 
 sub download_file {
 	my($link, $filename) = @_;
-	my $url = URI->new($link);
+	my $agent = "Mozilla/5.0 (X11; FreeBSD amd64; rv:38.0) Gecko/20100101 Firefox/38.0";
+    my $downloader = 'wget';
+    my $cmd = "$downloader -c -U \"$agent\" \"$link\" -O $filename";
+    my $rc = 1;
 
-	$ua->default_headers( HTTP::Headers->new(
-		Accept => '*/*',
-		)
-	);
-	$ua->agent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.54.16 (KHTML, like Gecko) Version/5.1.4 Safari/534.54.16");
-	my $rc = getstore($url, $filename);
+    # Check if wget is installed
+    unless (which("$downloader")) {
+        die "[$progname] $downloader is not in your PATH. Aborted.";
+    }
+
+    # Start downloading...
+    system($cmd);
+
+    if ($? == -1) {
+        die "[$progname] Failed to execute the command: $cmd";
+    }
+    elsif ($? & 127) {
+        printf "[$progname] Command [$cmd] died with signal %d, %s coredump\n",
+            ($? & 127), ($? & 128) ? 'with' : 'without';
+        die "[$progname] Aborted.";    
+    }
+    else {
+        # Get the real return value of the command
+        $rc = $? >> 8;
+    }
 	
 	return $rc;
 }
