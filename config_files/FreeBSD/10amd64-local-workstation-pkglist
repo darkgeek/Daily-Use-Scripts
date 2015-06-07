@@ -57,3 +57,7 @@ x11/nvidia-settings
 x11/nvidia-xconfig
 audio/lame
 security/py-m2crypto
+www/privoxy
+x11-fonts/fira
+sysutils/p5-File-Which
+www/p5-libwww
