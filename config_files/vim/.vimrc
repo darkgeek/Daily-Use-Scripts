@@ -32,3 +32,6 @@ autocmd BufWritePost *
       \   call system('exctags -R --languages='.&ft) |
       \   echo "Tag refreshed." |
       \ endif
+
+"Read Manpage in vim
+runtime! ftplugin/man.vim
