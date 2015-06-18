@@ -68,3 +68,4 @@ security/py-openssl
 converters/convmv
 converters/p5-JSON
 devel/p5-Curses-UI
+audio/mpg123
