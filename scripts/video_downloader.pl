@@ -12,7 +12,7 @@ use File::Which qw(which);
 use URI;
 
 # Process the command line
-die "Usage: $0 [\$url] [fluent|high|super]\n" if @ARGV < 1;
+die "Usage: $0 [\$url] [fluent|high|super|super2]\n" if @ARGV < 1;
 
 my $keyword = "$ARGV[0]";
 my $format = "";
@@ -26,7 +26,7 @@ my $progname = basename $0;
 my $link_pattern = '<input type="hidden" name="inf" value="(?<video_link>.*)"';
 my $seperator = '\|';
 my $success_code = 200;
-my $uri = "http://www.flvcd.com/parse.php?format=$format&kw=$keyword";
+my $uri = "http://www.flvcd.com/parse.php?format=$format&kw=$keyword&go=1";
 my @videos = qw//;
 my $output_filename = "output.avi";
 
