@@ -16,7 +16,6 @@ x11/xfce4-whiskermenu-plugin
 www/node
 www/npm
 emulators/virtualbox-ose
-audio/deadbeef
 multimedia/mplayer
 ftp/wget
 x11-fonts/wqy
