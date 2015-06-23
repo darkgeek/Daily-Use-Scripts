@@ -69,5 +69,4 @@ converters/p5-JSON
 devel/p5-Curses-UI
 audio/mpg123
 audio/musicpd
-audio/ncmpcpp
 audio/musicpc
