@@ -70,3 +70,6 @@ devel/p5-Curses-UI
 audio/mpg123
 audio/musicpd
 audio/musicpc
+audio/p5-Audio-MPD
+deskutils/fbreader
+x11-toolkits/py-tkinter
