@@ -31,6 +31,7 @@ setenv XMODIFIERS @im=fcitx
 setenv GTK_IM_MODULE fcitx
 setenv GTK3_IM_MODULE fcitx
 setenv NODE_PATH ~/Apps/node_modules/
+setenv TERM xterm-256color
 
 #Display raw control characters to prevent the weird formatting issue in perldoc
 setenv LESS "-r -f" 
