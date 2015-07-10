@@ -23,7 +23,13 @@ set t_Co=256
 :ab cmain int<CR>main(int argc, char *argv[]) {}<Esc>i<CR><CR><Esc>ki<Tab><CR>return 0;<Esc>ki<Tab>
 nmap <C-l> :tabnext<CR>
 nmap <C-k> :tabp<CR>
-nmap <C-b> :tabnew 
+
+"Maps for coding with brackets
+imap <C-k> <C-o>k
+imap <C-j> <Esc>:exec "normal f" . leavechar<CR>a
+inoremap } }<Esc>:let leavechar="}"<CR>i
+inoremap ) )<Esc>:let leavechar=")"<CR>i
+inoremap ] ]<Esc>:let leavechar="]"<CR>i
 
 "Save read-only file after editing
 command Sudow w !sudo tee % >/dev/null
