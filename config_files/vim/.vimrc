@@ -25,7 +25,7 @@ nmap <C-l> :tabnext<CR>
 nmap <C-k> :tabp<CR>
 
 "Maps for coding with brackets
-imap <C-k> <C-o>k
+imap <C-k> <Esc>%ji
 imap <C-j> <Esc>:exec "normal f" . leavechar<CR>a
 inoremap } }<Esc>:let leavechar="}"<CR>i
 inoremap ) )<Esc>:let leavechar=")"<CR>i
