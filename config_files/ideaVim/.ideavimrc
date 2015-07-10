@@ -1,2 +1,9 @@
+" Navigate among tabs
 nmap <C-k> gT
 nmap <C-l> gt
+
+" Maps for coding with brackets
+imap <C-j> <Esc>%%a 
+inoremap } }<Esc>i
+inoremap ) )<Esc>i
+inoremap ] ]<Esc>i
