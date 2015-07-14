@@ -72,3 +72,4 @@ audio/musicpd
 audio/musicpc
 audio/p5-Audio-MPD
 deskutils/fbreader
+databases/redis
