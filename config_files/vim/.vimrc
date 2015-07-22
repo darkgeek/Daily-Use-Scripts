@@ -24,6 +24,7 @@ set softtabstop=4
 set shiftwidth=4
 " Use tab at the start of a line or paragraph
 set smarttab
+set expandtab
 " Disable mouse
 set mouse-=a
 " Disable backup file
@@ -45,11 +46,6 @@ set completeopt=menu,preview,longest
 " Show status line always
 set cmdheight=2
 set laststatus=2
-
-" Abbreviation for C main function
-:ab cmain int<CR>main(int argc, char *argv[]) {}<Esc>i<CR><CR><Esc>ki<Tab><CR>return 0;<Esc>ki<Tab>
-" Abbreviation for Java main function
-:ab psvm public static void main(String[] args) {}<Esc>i<CR>
 
 " Key map for navigating among tabs
 nmap <C-l> :tabnext<CR>
@@ -77,6 +73,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'aperezdc/vim-template'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

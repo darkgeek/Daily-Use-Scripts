@@ -1,0 +1,1 @@
+:ab psvm public static void main(String[] args) {}<Esc>i<CR>
