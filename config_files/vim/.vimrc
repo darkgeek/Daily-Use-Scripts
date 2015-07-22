@@ -79,6 +79,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'aperezdc/vim-template'
 Plugin 'kshenoy/vim-signature'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
