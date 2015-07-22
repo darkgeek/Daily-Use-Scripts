@@ -56,9 +56,26 @@ nmap <C-k> :tabp<CR>
 "Maps for coding with brackets
 imap <C-k> <Esc>%ji
 imap <C-j> <Esc>:exec "normal f" . leavechar<CR>a
-inoremap } }<Esc>:let leavechar="}"<CR>i
-inoremap ) )<Esc>:let leavechar=")"<CR>i
-inoremap ] ]<Esc>:let leavechar="]"<CR>i
+
+func SetCursor(key1, key2) 
+	" Get the current character under cursor and the one before the cursor
+	let current_word = getline('.')[col('.') - 2] . getline('.')[col('.') - 1]
+	if current_word == a:key1 . a:key2
+		" Set the leavechar
+		let g:leavechar = a:key2
+		" Just like you press 'i' key in normal mode
+		startinsert
+	else
+		" Just like you press 'a' key in normal mode
+		call feedkeys('a', 'n')
+	endif
+endfunc
+inoremap > ><Esc>:call SetCursor("<", ">")<CR>
+inoremap ) )<Esc>:call SetCursor("(", ")")<CR>
+inoremap } }<Esc>:call SetCursor("{", "}")<CR>
+inoremap ] ]<Esc>:call SetCursor("[", "]")<CR>
+inoremap " "<Esc>:call SetCursor("\"", "\"")<CR>
+inoremap ' '<Esc>:call SetCursor("\'", "\'")<CR>
 
 " Save read-only file after editing
 command Sudow w !sudo tee % >/dev/null
