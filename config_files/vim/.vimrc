@@ -37,6 +37,8 @@ set cursorline
 set cursorcolumn
 " Fold block by syntax
 set foldmethod=syntax
+" Disable block fold on startup
+set nofoldenable
 " 256-color support
 set t_Co=256
 " Set lines left to the margin
