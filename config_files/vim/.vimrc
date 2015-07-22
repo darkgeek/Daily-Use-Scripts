@@ -81,7 +81,6 @@ call vundle#begin()
 " Plugins 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
