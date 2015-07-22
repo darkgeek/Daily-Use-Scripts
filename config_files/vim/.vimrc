@@ -48,6 +48,8 @@ set laststatus=2
 
 " Abbreviation for C main function
 :ab cmain int<CR>main(int argc, char *argv[]) {}<Esc>i<CR><CR><Esc>ki<Tab><CR>return 0;<Esc>ki<Tab>
+" Abbreviation for Java main function
+:ab psvm public static void main(String[] args) {}<Esc>i<CR>
 
 " Key map for navigating among tabs
 nmap <C-l> :tabnext<CR>
