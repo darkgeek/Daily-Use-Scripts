@@ -2,13 +2,10 @@
 nmap <C-k> gT
 nmap <C-l> gt
 
-" Maps for coding with brackets
-imap <C-j> <Esc>%%a 
-inoremap } }<Esc>i
-inoremap ) )<Esc>i
-inoremap ] ]<Esc>i
-
 " Search
 set hlsearch
 set ignorecase
 set showmode
+
+" Set lines left to the margin
+set scrolloff=3
