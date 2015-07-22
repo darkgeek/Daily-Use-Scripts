@@ -46,6 +46,8 @@ set completeopt=menu,preview,longest
 " Show status line always
 set cmdheight=2
 set laststatus=2
+" Auto-Completion for Vim command
+set wildmenu
 
 " Key map for navigating among tabs
 nmap <C-l> :tabnext<CR>
