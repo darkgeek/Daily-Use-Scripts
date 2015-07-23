@@ -61,7 +61,7 @@ command Sudow w !sudo tee % >/dev/null
 " Refresh ctags files upon saving
 autocmd BufWritePost *
       \ if filereadable('tags') |
-      \   call system('exctags -R --languages='.&ft) |
+      \   call system('exctags -R --languages-force='.&ft) |
       \   echo "Tag refreshed." |
       \ endif
 
