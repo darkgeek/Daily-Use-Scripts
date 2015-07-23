@@ -86,6 +86,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -169,3 +170,13 @@ let g:syntastic_mode_map = {
         \ "mode": "passive",
         \ "active_filetypes": ["perl"],
         \ "passive_filetypes": [] }
+
+" [tagbar] Show tag list on left
+let tagbar_left=1 
+" [tagbar] List tags shortcut
+nnoremap <Leader>tl :TagbarToggle<CR> 
+" [tagbar] Tagbar window size
+let tagbar_width=32 
+" [tagbar] Don't show extra help information
+let g:tagbar_compact=1
+
