@@ -52,6 +52,8 @@ set laststatus=2
 set wildmenu
 " Default Omni Function
 set omnifunc=syntaxcomplete#Complete
+" Do not search included files to speed up Ctrl-P
+set complete-=i
 
 " Save read-only file after editing
 command Sudow w !sudo tee % >/dev/null
