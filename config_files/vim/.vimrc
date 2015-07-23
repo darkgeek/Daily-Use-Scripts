@@ -50,6 +50,8 @@ set cmdheight=2
 set laststatus=2
 " Auto-Completion for Vim command
 set wildmenu
+" Default Omni Function
+set omnifunc=syntaxcomplete#Complete
 
 " Key map for navigating among tabs
 nmap <C-l> :tabnext<CR>
@@ -96,3 +98,4 @@ let g:UltiSnipsEditSplit="vertical"
 
 " [UltiSnips] Set my own snippets
 let g:UltiSnipsSnippetDirectories=["darkgeek_snippets"]
+
