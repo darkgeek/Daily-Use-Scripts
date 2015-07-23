@@ -19,7 +19,7 @@ alias curl  "curl --retry-delay 2 --retry 10 -L -k -O -C -"
 # A righteous umask
 umask 22
 
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/Apps/bin)
+set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/Apps/bin $HOME/.vim/bundle/perlomni.vim/bin)
 
 setenv	EDITOR	vim
 setenv	PAGER	less

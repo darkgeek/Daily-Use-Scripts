@@ -83,6 +83,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'kshenoy/vim-signature'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'honza/vim-snippets'
+Plugin 'c9s/perlomni.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
