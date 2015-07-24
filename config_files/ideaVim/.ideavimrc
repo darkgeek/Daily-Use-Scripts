@@ -5,6 +5,9 @@ nmap <C-l> gt
 " Navigate to Class file
 nmap <leader>p :action GotoClass<CR>
 
+" Navigate to file
+nmap <leader>bm :action GotoFile<CR>
+
 " Search
 set hlsearch
 set ignorecase
