@@ -3,10 +3,10 @@ nmap <C-k> gT
 nmap <C-l> gt
 
 " Navigate to Class file
-nmap <leader>p :action GotoClass<CR>
+nmap <leader>pt :action GotoClass<CR>
 
 " Navigate to file
-nmap <leader>bm :action GotoFile<CR>
+nmap <leader>p :action GotoFile<CR>
 
 " Search
 set hlsearch

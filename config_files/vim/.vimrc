@@ -54,6 +54,8 @@ set wildmenu
 set omnifunc=syntaxcomplete#Complete
 " Do not search included files to speed up Ctrl-P
 set complete-=i
+" Switch to the other buffer without saving current buffer
+set hidden
 
 " Save read-only file after editing
 command Sudow w !sudo tee % >/dev/null
