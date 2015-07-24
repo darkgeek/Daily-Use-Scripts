@@ -123,7 +123,7 @@ nmap <leader>p :CtrlP<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
-nmap <leader>pt :CtrlPTag<cr>
+nmap <leader>bt :CtrlPTag<cr>
 
 " [Buffergator] Use the right side of the screen
 let g:buffergator_viewport_split_policy = 'R'
