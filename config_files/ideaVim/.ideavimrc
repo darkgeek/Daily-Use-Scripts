@@ -2,6 +2,9 @@
 nmap <C-k> gT
 nmap <C-l> gt
 
+" Navigate to Class file
+nmap <leader>p :action GotoClass<CR>
+
 " Search
 set hlsearch
 set ignorecase
@@ -9,3 +12,4 @@ set showmode
 
 " Set lines left to the margin
 set scrolloff=3
+
