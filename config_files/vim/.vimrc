@@ -60,6 +60,10 @@ set hidden
 " Save read-only file after editing
 command Sudow w !sudo tee % >/dev/null
 
+" Navigate through buffers
+nmap <C-l> :bnext<CR>
+nmap <C-k> :bprevious<CR>
+
 " Refresh ctags files upon saving
 autocmd BufWritePost *
       \ if filereadable('tags') |
@@ -84,7 +88,6 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'honza/vim-snippets'
 Plugin 'c9s/perlomni.vim'
-Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -124,28 +127,6 @@ nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
 nmap <leader>bt :CtrlPTag<cr>
-
-" [Buffergator] Use the right side of the screen
-let g:buffergator_viewport_split_policy = 'R'
-
-" [Buffergator] I want my own keymappings...
-let g:buffergator_suppress_keymaps = 1
-
-" [Buffergator] Looper buffers
-"let g:buffergator_mru_cycle_loop = 1
-
-" [Buffergator] Go to the previous buffer open
-nmap <C-k> :BuffergatorMruCyclePrev<cr>
-
-" [Buffergator] Go to the next buffer open
-nmap <C-l> :BuffergatorMruCycleNext<cr>
-
-" [Buffergator] View the entire list of buffers open
-nmap <leader>bl :BuffergatorOpen<cr>
-
-" [Buffergator] Close the current buffer and move to the previous one
-nmap <leader>T :enew<cr>
-nmap <leader>bq :bp <BAR> bd #<cr>
 
 " [NERDtree] List files in this project
 nmap <Leader>fl :NERDTreeToggle<CR>
