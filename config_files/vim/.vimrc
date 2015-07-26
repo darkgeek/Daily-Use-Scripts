@@ -56,6 +56,9 @@ set omnifunc=syntaxcomplete#Complete
 set complete-=i
 " Switch to the other buffer without saving current buffer
 set hidden
+" Jump to the window already displaying desired buffer instead of creating new
+" one
+set switchbuf=useopen
 
 " Save read-only file after editing
 command Sudow w !sudo tee % >/dev/null
