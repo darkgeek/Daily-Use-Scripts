@@ -46,6 +46,7 @@ databases/mysql56-server
 devel/apache-ant
 devel/maven31
 lang/rust
+devel/cargo
 sysutils/vagrant
 x11-themes/gnome-icons-faenza
 games/cowsay
