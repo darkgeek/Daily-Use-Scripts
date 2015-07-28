@@ -16,6 +16,7 @@ x11/xfce4-whiskermenu-plugin
 www/node
 www/npm
 emulators/virtualbox-ose
+emulators/i386-wine-devel
 multimedia/mplayer
 ftp/wget
 x11-fonts/wqy
