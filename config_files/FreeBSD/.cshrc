@@ -15,6 +15,7 @@ alias ll	ls -lAF
 alias top	top -P
 alias netcheck	systat -if 1
 alias curl  "curl --retry-delay 2 --retry 10 -L -k -O -C -"
+alias paperscreen "xcalib -red 1.5 0 65 -green 1.5 0 60 -blue 1.5 0 25 -alter"
 
 # A righteous umask
 umask 22

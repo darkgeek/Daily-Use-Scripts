@@ -79,3 +79,4 @@ sysutils/tmux
 devel/p5-UUID-Tiny
 databases/p5-Redis
 devel/p5-DateTime
+x11/xcalib
