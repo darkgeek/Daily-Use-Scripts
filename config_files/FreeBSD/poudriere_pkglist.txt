@@ -73,10 +73,10 @@ audio/mpg123
 audio/musicpd
 audio/musicpc
 audio/p5-Audio-MPD
-deskutils/fbreader
 databases/redis
 sysutils/tmux
 devel/p5-UUID-Tiny
 databases/p5-Redis
 devel/p5-DateTime
 x11/xcalib
+deskutils/calibre
