@@ -27,5 +27,8 @@ alias startnet='sudo pppoe-start && sleep 2 && sudo ntpdate time.nist.gov'
 alias mygputemp='/opt/vc/bin/vcgencmd measure_temp'
 alias mycputemp='cat /sys/class/thermal/thermal_zone0/temp'
 
+# Bind Ctrl-Left and Ctrl-Right to word jumping in line editing
+bind '"\e[1;5D": shell-backward-word'
+bind '"\e[1;5C": shell-forward-word'
+
 fortune | cowsay
-eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)

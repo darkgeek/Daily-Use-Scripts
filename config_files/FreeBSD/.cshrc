@@ -76,5 +76,9 @@ if ($?prompt) then
 
 endif
 
+# Bind Ctrl-Left and Ctrl-Right to word jumping in line editing
+bindkey '\e[1;5C' vi-word-fwd
+bindkey '\e[1;5D' vi-word-back
+
 fortune | cowsay
 eval `perl -I$HOME/perl5/lib/perl5 -Mlocal::lib`
