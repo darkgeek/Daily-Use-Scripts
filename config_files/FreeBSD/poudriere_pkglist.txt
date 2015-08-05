@@ -82,3 +82,5 @@ x11/xcalib
 deskutils/calibre
 print/texlive-full
 java/visualvm
+security/nmap
+sysutils/lsof
