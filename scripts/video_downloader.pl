@@ -43,13 +43,6 @@ foreach my $line (split /^/, $source_document) {
 		my $video_number = 0;
 		foreach my $link (@video_links) {
 			say "[$progname] Trying to download it: $link";
-			
-			if (-e $video_number) {
-				say "[$progname] $video_number aleardy exists! No need to download.";
-				push @videos, $video_number;
-				$video_number += 1;
-				next;
-			}
 			my $rc = &download_file($link, $video_number);
 			say "[$progname] Done.";
 			die "[$progname] Unable to download videos!" if $rc != 0;
