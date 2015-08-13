@@ -68,6 +68,7 @@ devel/py-gevent
 security/py-openssl
 converters/convmv
 converters/p5-JSON
+devel/p5-Curses
 devel/p5-Curses-UI
 audio/mpg123
 audio/musicpd
