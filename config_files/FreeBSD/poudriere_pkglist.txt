@@ -84,4 +84,4 @@ deskutils/calibre
 print/texlive-full
 java/visualvm
 security/nmap
-sysutils/lsof
+math/gnumeric
