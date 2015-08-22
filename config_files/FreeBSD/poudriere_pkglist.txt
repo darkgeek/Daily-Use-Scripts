@@ -10,7 +10,6 @@ textproc/gsed
 java/openjdk7
 java/linux-sun-jdk17
 x11/xorg
-textproc/goldendict
 x11-wm/xfce4
 x11/xfce4-whiskermenu-plugin
 www/node
@@ -85,3 +84,4 @@ java/visualvm
 security/nmap
 sysutils/lsof
 math/gnumeric
+devel/gradle
