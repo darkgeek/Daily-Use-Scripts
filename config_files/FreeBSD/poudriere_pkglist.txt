@@ -85,3 +85,4 @@ security/nmap
 sysutils/lsof
 math/gnumeric
 devel/gradle
+graphics/libqrencode
