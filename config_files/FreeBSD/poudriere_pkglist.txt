@@ -85,3 +85,4 @@ java/visualvm
 security/nmap
 sysutils/lsof
 math/gnumeric
+devel/py-pip
