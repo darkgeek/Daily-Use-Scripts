@@ -14,6 +14,11 @@ alias ls='gls --color=auto'
 alias ll='gls --color=auto -a -l -h'
 alias la='gls --color=auto -a'
 alias netcheck='systat if 1'
+alias vim='TERM=xterm-256color vim'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias git='TERM=xterm-256color git'
 
 bind "^[[3~"=delete-char-forward
 
