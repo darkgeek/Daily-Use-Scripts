@@ -1,6 +1,6 @@
 . /etc/ksh.kshrc
 
-PKG_PATH=http://mirror.internode.on.net/pub/OpenBSD/`uname -r`/packages/`machine -a`/
+PKG_PATH=http://mirror.internode.on.net/pub/OpenBSD/snapshots/packages/`machine -a`/
 #PKG_PATH=https://stable.mtier.org/updates/$(uname -r)/$(arch -s):${PKG_PATH}
 export PKG_PATH
 
