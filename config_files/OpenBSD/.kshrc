@@ -1,6 +1,6 @@
 . /etc/ksh.kshrc
 
-PKG_PATH=http://mirror.internode.on.net/pub/OpenBSD/`uname -r`/packages/`machine -a`/
+PKG_PATH=http://mirror.internode.on.net/pub/OpenBSD/snapshots/packages/`machine -a`/
 #PKG_PATH=https://stable.mtier.org/updates/$(uname -r)/$(arch -s):${PKG_PATH}
 export PKG_PATH
 
@@ -14,6 +14,11 @@ alias ls='gls --color=auto'
 alias ll='gls --color=auto -a -l -h'
 alias la='gls --color=auto -a'
 alias netcheck='systat if 1'
+alias vim='TERM=xterm-256color vim'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias git='TERM=xterm-256color git'
 
 bind "^[[3~"=delete-char-forward
 
