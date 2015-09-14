@@ -87,3 +87,5 @@ math/gnumeric
 devel/py-pip
 devel/gradle
 graphics/libqrencode
+devel/py-virtualenv
+lang/python3
