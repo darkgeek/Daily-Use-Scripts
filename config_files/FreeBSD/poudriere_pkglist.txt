@@ -67,8 +67,6 @@ devel/py-gevent
 security/py-openssl
 converters/convmv
 converters/p5-JSON
-devel/p5-Curses
-devel/p5-Curses-UI
 audio/mpg123
 audio/musicpd
 audio/musicpc
@@ -89,3 +87,4 @@ devel/gradle
 graphics/libqrencode
 devel/py-virtualenv
 lang/python3
+audio/ncmpcpp
