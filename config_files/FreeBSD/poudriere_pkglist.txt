@@ -88,3 +88,4 @@ graphics/libqrencode
 devel/py-virtualenv
 lang/python3
 audio/ncmpcpp
+archivers/cabextract
