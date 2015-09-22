@@ -19,7 +19,6 @@ alias paperscreen "xcalib -red 1.5 0 65 -green 1.5 0 60 -blue 1.5 0 25 -alter"
 alias normalscreen "xcalib -clear"
 alias mv 'mv -i'
 alias cp 'cp -i'
-alias rm 'rm -i'
 
 # A righteous umask
 umask 22
