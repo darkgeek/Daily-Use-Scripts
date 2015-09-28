@@ -91,3 +91,4 @@ audio/ncmpcpp
 archivers/cabextract
 www/nginx
 www/tt-rss
+security/stunnel
