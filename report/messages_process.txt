@@ -1,0 +1,47 @@
+root@rpi [/root] # tail -f /var/log/messages                                  <
+Oct 12 03:05:30 rpi ntpd[1359]: ntpd 4.2.8p3-o Fri Jul 10 09:17:47 EDT 2015 (import): Starting
+Oct 12 03:05:30 rpi ntpd[1359]: Command line: /usr/sbin/ntpd -p /var/run/ntpd.pid -g
+Oct 12 03:05:30 rpi ntpd[1156]: proto: precision = 4.000 usec (-18)
+Oct 12 03:05:31 rpi ntpd[1156]: restrict default: KOD does nothing without LIMITED.
+Oct 12 03:05:31 rpi ntpd[1156]: Listen and drop on 0 v6wildcard [::]:123
+Oct 12 03:05:31 rpi ntpd[1156]: Listen and drop on 1 v4wildcard 0.0.0.0:123
+Oct 12 03:05:31 rpi ntpd[1156]: Listen normally on 2 lo0 127.0.0.1:123
+Oct 12 03:05:31 rpi ntpd[1156]: Listen normally on 3 lo0 [::1]:123
+Oct 12 03:05:31 rpi ntpd[1156]: Listen normally on 4 lo0 [fe80::1%3]:123
+Oct 12 03:05:31 rpi ntpd[1156]: Listening on routing socket on fd #25 for interface updates
+Oct 12 03:07:38 rpi ntpd[1156]: Listen normally on 5 urtwn0 10.1.16.21:123
+Oct 12 03:07:38 rpi ntpd[1156]: Listen normally on 6 urtwn0 [fe80::ea4e:6ff:fe1f:fc6f%2]:123
+Oct 12 03:08:21 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 IEEE 802.11: associated
+Oct 12 03:08:21 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 RADIUS: starting accounting session 561AB38E-00000000
+Oct 12 03:08:21 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 WPA: pairwise key handshake completed (RSN)
+Oct 12 03:08:21 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 IEEE 802.11: disassociated
+Oct 12 03:08:22 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 IEEE 802.11: associated
+Oct 12 03:08:22 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 RADIUS: starting accounting session 561AB38E-00000001
+Oct 12 03:08:22 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 WPA: pairwise key handshake completed (RSN)
+Oct 12 03:08:29 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 IEEE 802.11: associated
+Oct 12 03:08:29 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 RADIUS: starting accounting session 561AB38E-00000001
+Oct 12 03:08:29 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 WPA: pairwise key handshake completed (RSN)
+Oct 12 03:08:36 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 IEEE 802.11: associated
+Oct 12 03:08:36 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 RADIUS: starting accounting session 561AB38E-00000001
+Oct 12 03:08:36 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 WPA: pairwise key handshake completed (RSN)
+Oct 12 03:08:39 rpi dhcpd: Internet Systems Consortium DHCP Server 4.3.0
+Oct 12 03:08:39 rpi dhcpd: Copyright 2004-2014 Internet Systems Consortium.
+Oct 12 03:08:39 rpi dhcpd: All rights reserved.
+Oct 12 03:08:39 rpi dhcpd: For info, please visit https://www.isc.org/software/dhcp/
+Oct 12 03:08:40 rpi dhcpd: Wrote 1 leases to leases file.
+Oct 12 03:08:40 rpi dhcpd: Listening on BPF/urtwn0/e8:4e:06:1f:fc:6f/10.1.16.0/24
+Oct 12 03:08:40 rpi dhcpd: Sending on   BPF/urtwn0/e8:4e:06:1f:fc:6f/10.1.16.0/24
+Oct 12 03:08:40 rpi dhcpd: Sending on   Socket/fallback/fallback-net
+Oct 12 03:08:41 rpi dhcpd: Server starting service.
+Oct 12 03:08:43 rpi ntpd[1156]: Deleting interface #5 urtwn0, 10.1.16.21#123, interface stats: received=0, sent=0, dropped=0, active_time=65 secs
+Oct 12 03:08:43 rpi ntpd[1156]: Deleting interface #6 urtwn0, fe80::ea4e:6ff:fe1f:fc6f%2#123, interface stats: received=0, sent=0, dropped=0, active_time=65 secs
+Oct 12 03:08:43 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 IEEE 802.11: associated
+Oct 12 03:08:43 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 RADIUS: starting accounting session 561AB38E-00000001
+Oct 12 03:08:43 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 WPA: pairwise key handshake completed (RSN)
+Oct 12 03:08:51 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 IEEE 802.11: associated
+Oct 12 03:08:51 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 RADIUS: starting accounting session 561AB38E-00000001
+Oct 12 03:08:51 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 WPA: pairwise key handshake completed (RSN)
+Oct 12 03:08:58 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 IEEE 802.11: associated
+Oct 12 03:08:58 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 RADIUS: starting accounting session 561AB38E-00000001
+Oct 12 03:08:58 rpi hostapd: urtwn0: STA 00:11:94:d8:33:00 WPA: pairwise key handshake completed (RSN)
+
