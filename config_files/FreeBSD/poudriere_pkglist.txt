@@ -92,3 +92,6 @@ archivers/cabextract
 www/nginx
 www/tt-rss
 security/stunnel
+print/py-pdf
+graphics/py-poppler-qt4
+x11/xfce4-clipman-plugin
