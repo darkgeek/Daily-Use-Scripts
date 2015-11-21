@@ -12,7 +12,7 @@ set hlsearch
 set ignorecase
 set incsearch
 " Color schmeme
-colorscheme gentooish
+colorscheme maui
 " Default file encoding
 set encoding=utf-8
 " Specify tags file
@@ -77,28 +77,25 @@ autocmd BufWritePost *
 "Read Manpage in vim
 runtime! ftplugin/man.vim
 
-" Set the runtime path to include Vundle and initialize
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Begin Plug
+call plug#begin('~/.vim/plugged')
 
 " Plugins 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'SirVer/ultisnips'
-Plugin 'kshenoy/vim-signature'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'honza/vim-snippets'
-Plugin 'c9s/perlomni.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
+Plug 'junegunn/vim-plug'
+Plug 'mattn/emmet-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'SirVer/ultisnips'
+Plug 'kshenoy/vim-signature'
+Plug 'easymotion/vim-easymotion'
+Plug 'honza/vim-snippets'
+Plug 'c9s/perlomni.vim', { 'for': 'perl' }
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" End Plug
+call plug#end()            
 
 " [ultisnips] Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
