@@ -97,3 +97,5 @@ graphics/py-poppler-qt4
 x11/xfce4-clipman-plugin
 sysutils/duplicity
 math/gnuplot
+net/rsync
+security/openssh-portable
