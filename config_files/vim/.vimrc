@@ -77,6 +77,14 @@ autocmd BufWritePost *
 "Read Manpage in vim
 runtime! ftplugin/man.vim
 
+"Auto-install plugins and colorscheme
+if empty(glob('~/.vim/autoload/plug.vim'))
+  !curl -fLo ~/.vim/colors/maui.vim --create-dirs https://raw.githubusercontent.com/darkgeek/vim-maui/master/colors/maui.vim
+  execute 'colorscheme maui'
+  !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
 " Begin Plug
 call plug#begin('~/.vim/plugged')
 
