@@ -98,3 +98,4 @@ sysutils/duplicity
 math/gnuplot
 net/rsync
 security/openssh-portable
+lang/mit-scheme
