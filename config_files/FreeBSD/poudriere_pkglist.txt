@@ -18,7 +18,6 @@ emulators/virtualbox-ose
 emulators/i386-wine-devel
 multimedia/mplayer
 ftp/wget
-x11-fonts/wqy
 x11-fonts/liberation-fonts-ttf
 x11-fonts/webfonts
 audio/mac
@@ -99,3 +98,5 @@ math/gnuplot
 net/rsync
 security/openssh-portable
 lang/mit-scheme
+x11-fonts/noto
+accessibility/redshift
