@@ -100,3 +100,4 @@ security/openssh-portable
 lang/mit-scheme
 x11-fonts/noto
 accessibility/redshift
+www/aria2
