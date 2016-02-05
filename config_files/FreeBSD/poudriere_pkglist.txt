@@ -101,3 +101,5 @@ lang/mit-scheme
 x11-fonts/noto
 accessibility/redshift
 www/aria2
+net/vnc
+x11-drivers/xf86-video-scfb
