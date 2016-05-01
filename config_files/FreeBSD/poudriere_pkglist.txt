@@ -78,7 +78,6 @@ print/texlive-full
 java/visualvm
 security/nmap
 sysutils/lsof
-math/gnumeric
 devel/py-pip
 devel/gradle
 graphics/libqrencode
@@ -102,3 +101,4 @@ www/aria2
 net/vnc
 java/intellij
 x11-drivers/xf86-video-scfb
+editors/libreoffice
