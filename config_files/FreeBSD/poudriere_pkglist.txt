@@ -7,8 +7,7 @@ www/chromium
 sysutils/coreutils
 lang/gawk
 textproc/gsed
-java/openjdk7
-java/linux-sun-jdk17
+java/openjdk8
 x11/xorg
 x11-wm/xfce4
 x11/xfce4-whiskermenu-plugin
@@ -40,8 +39,7 @@ graphics/feh
 graphics/scrot
 graphics/evince
 graphics/mesa-demos
-x11-themes/greybird-theme
-databases/mysql56-server
+databases/mariadb101-server
 devel/apache-ant
 devel/maven31
 lang/rust
@@ -102,4 +100,5 @@ x11-fonts/noto
 accessibility/redshift
 www/aria2
 net/vnc
+java/intellij
 x11-drivers/xf86-video-scfb
