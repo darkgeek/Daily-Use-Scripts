@@ -1,0 +1,2 @@
+event=jack/*
+action=/home/justin/Apps/bin/sound-event.sh %e
