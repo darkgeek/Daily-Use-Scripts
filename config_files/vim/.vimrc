@@ -92,29 +92,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'SirVer/ultisnips'
-Plug 'kshenoy/vim-signature'
 Plug 'easymotion/vim-easymotion'
-Plug 'honza/vim-snippets'
-Plug 'c9s/perlomni.vim', { 'for': 'perl' }
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 
 " End Plug
 call plug#end()            
-
-" [ultisnips] Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" [ultisnips] If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" [UltiSnips] Set my own snippets
-let g:UltiSnipsSnippetDirectories=["darkgeek_snippets"]
 
 " [CtrlP] Setup some default ignores
 let g:ctrlp_custom_ignore = {
@@ -148,20 +132,6 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 " [NERDTree] Delete buffers as well after removing a file
 let NERDTreeAutoDeleteBuffer=1
-
-" [syntastic] Settings for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_perl_checkers = ['perl', 'podchecker']
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_mode_map = {
-        \ "mode": "passive",
-        \ "active_filetypes": ["perl"],
-        \ "passive_filetypes": [] }
 
 " [tagbar] Show tag list on left
 let tagbar_left=1 
