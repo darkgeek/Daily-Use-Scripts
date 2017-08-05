@@ -11,7 +11,7 @@ echo "x) nothing"
 read CHOICE
 case $CHOICE in
     y)
-         youtube-dl -o ~/storage/movies/%(title)s.%(ext)s $url
+         youtube-dl -o '~/storage/movies/%(title)s.%(ext)s' $url
          ;;
     g)
         you-get -o ~/storage/movies/ $url
