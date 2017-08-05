@@ -4,7 +4,6 @@
 url=$1
 echo "What should I do with $url"
 echo "y) download video with youtube-dl to movies-folder"
-echo "g) download video with you-get to movies-folder"
 echo "w) download with wget to download-folder"
 echo "x) nothing"
 
@@ -13,9 +12,6 @@ case $CHOICE in
     y)
          youtube-dl -o '~/storage/movies/%(title)s.%(ext)s' $url
          ;;
-    g)
-        you-get -o ~/storage/movies/ $url
-        ;;
     w)
         wget -c $url -P ~/storage/downloads
         ;;
