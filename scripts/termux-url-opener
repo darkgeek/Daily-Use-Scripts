@@ -1,0 +1,25 @@
+#!/bin/sh
+# Fork from: https://gist.github.com/LordH3lmchen/dc35e8df3dc41d126683f18fe44ebe17
+
+url=$1
+echo "What should I do with $url"
+echo "y) download video with youtube-dl to movies-folder"
+echo "g) download video with you-get to movies-folder"
+echo "w) download with wget to download-folder"
+echo "x) nothing"
+
+read CHOICE
+case $CHOICE in
+    y)
+         youtube-dl -o ~/storage/movies/%(title)s.%(ext)s $url
+         ;;
+    g)
+        you-get -o ~/storage/movies/ $url
+        ;;
+    w)
+        wget -c $url -P ~/storage/downloads
+        ;;
+    x)
+        echo "bye"
+        ;;
+esac
