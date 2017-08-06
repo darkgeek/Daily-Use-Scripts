@@ -19,7 +19,7 @@ case $CHOICE in
         mpv "$url" --no-video
         ;;
     p)
-        youtube-dl -q -o- "$url" | mpv -
+        youtube-dl -o - "$url" | mpv -
         ;;
     g)
         you-get -p "mpv" "$url"
