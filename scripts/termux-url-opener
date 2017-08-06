@@ -4,6 +4,7 @@
 url=$1
 echo "What should I do with $url"
 echo "y) download video with youtube-dl to movies-folder"
+echo "t) download video with you-get to movies-folder"
 echo "m) play video with mpv online"
 echo "p) play video with youtube-dl and mpv online"
 echo "g) play video with you-get and mpv online"
@@ -14,6 +15,10 @@ read CHOICE
 case $CHOICE in
     y)
         youtube-dl -o '~/storage/movies/%(title)s.%(ext)s' "$url"
+        ;;
+    t)
+        echo "You should set your screen orientation to Landscape, or you-get will crash on Termux!"
+        you-get -o ~/storage/movies "$url"
         ;;
     m)
         mpv "$url" --no-video
