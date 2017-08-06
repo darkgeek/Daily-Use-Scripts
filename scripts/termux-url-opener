@@ -22,7 +22,7 @@ case $CHOICE in
         youtube-dl -q -o- "$url" | mpv -
         ;;
     g)
-        you-get -p mpv "$url"
+        you-get -p "mpv --no-ytdl" "$url"
         ;;
     w)
         wget -c "$url" -P ~/storage/downloads
