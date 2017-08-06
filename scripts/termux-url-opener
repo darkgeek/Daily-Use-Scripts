@@ -4,14 +4,18 @@
 url=$1
 echo "What should I do with $url"
 echo "y) download video with youtube-dl to movies-folder"
+echo "m) play video with mpv online"
 echo "w) download with wget to download-folder"
 echo "x) nothing"
 
 read CHOICE
 case $CHOICE in
     y)
-         youtube-dl -o '~/storage/movies/%(title)s.%(ext)s' $url
-         ;;
+        youtube-dl -o '~/storage/movies/%(title)s.%(ext)s' $url
+        ;;
+    m)
+        mpv $url --no-video
+        ;;
     w)
         wget -c $url -P ~/storage/downloads
         ;;
