@@ -3,16 +3,19 @@
 # Upgrade packages both in official repo and AUR
 
 function install_cower {
-    echo cower is not installed, so I try to install it...
+    echo === cower is not available in your PATH, so I try to install it ===
     git clone https://aur.archlinux.org/cower.git
     cd cower && makepkg -scCfi
 }
 
-echo Updating official supported packages...
+function test_if_cower_is_available {
+    command -v cower >/dev/null 2>&1 
+}
+
+echo === Updating official supported packages ===
 sudo pacman -Syu
 
-echo Updating AUR packages...
+echo === Updating AUR packages ===
 cd $HOME/Shares/buildzone
-command -v cower >/dev/null 2>&1 || install_cower
+test_if_cower_is_available || install_cower
 cower -uddf --timeout 120 && echo 'Should update(s) available, use "makepkg -scCfi" to install.'
-
