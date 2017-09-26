@@ -7,7 +7,7 @@ CURRENT_DIR=`dirname "$0"`
 . $CURRENT_DIR/libaur.sh
 
 echo === Updating official supported packages ===
-sudo pacman -Syu
+sudo pacman -Syu --color=auto
 
 echo === Updating AUR packages ===
 cd $WORKING_DIR
