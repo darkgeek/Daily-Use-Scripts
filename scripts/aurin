@@ -1,0 +1,30 @@
+#!/bin/env bash
+#
+# Install packages from AUR
+
+CURRENT_DIR=`dirname "$0"`
+SCRIPT_NAME=`basename "$0"`
+
+. $CURRENT_DIR/libaur.sh
+
+test_if_cower_is_available || install_cower
+
+function print_help {
+    echo "Usage: $CURRENT_DIR/$SCRIPT_NAME [package_name]"
+}
+
+PKG_NAME=$1
+if [[ -z "${PKG_NAME// }" ]]; then
+    print_help
+    exit 1
+fi
+
+cd $WORKING_DIR
+echo === Downloading AUR files ===
+cower -ddf --color=auto $PKG_NAME 
+
+if [ $? -eq 0 ];then
+    echo === Building ===
+    cd $PKG_NAME 
+    makepkg -sCcfi
+fi

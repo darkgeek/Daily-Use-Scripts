@@ -2,20 +2,18 @@
 #
 # Upgrade packages both in official repo and AUR
 
-function install_cower {
-    echo === cower is not available in your PATH, so I try to install it ===
-    git clone https://aur.archlinux.org/cower.git
-    cd cower && makepkg -scCfi
-}
+CURRENT_DIR=`dirname "$0"`
 
-function test_if_cower_is_available {
-    command -v cower >/dev/null 2>&1 
-}
+. $CURRENT_DIR/libaur.sh
 
 echo === Updating official supported packages ===
 sudo pacman -Syu
 
 echo === Updating AUR packages ===
-cd $HOME/Shares/buildzone
+cd $WORKING_DIR
 test_if_cower_is_available || install_cower
-cower -uddf --timeout 120 && echo 'Should update(s) available, use "makepkg -scCfi" to install.'
+cower -u --color=auto --timeout 120 
+
+if [ $? -ne 0 ];then
+    echo 'Update(s) available, use "aurin [package_name]" to install.'
+fi
