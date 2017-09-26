@@ -19,8 +19,8 @@ if [[ -z "${PKG_NAME// }" ]]; then
     exit 1
 fi
 
-cd $WORKING_DIR
 echo === Downloading AUR files ===
+cd $WORKING_DIR
 cower -ddf --color=auto $PKG_NAME 
 
 if [ $? -eq 0 ];then

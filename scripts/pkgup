@@ -10,7 +10,6 @@ echo === Updating official supported packages ===
 sudo pacman -Syu --color=auto
 
 echo === Updating AUR packages ===
-cd $WORKING_DIR
 test_if_cower_is_available || install_cower
 cower -u --color=auto --timeout 120 
 
