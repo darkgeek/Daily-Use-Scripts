@@ -2,6 +2,7 @@
 
 echo start adb...
 export ANDROID_ADB_SERVER_PORT=12345
+export ADB_LIBUSB=0
 adb devices
 
 echo start brevent server...
