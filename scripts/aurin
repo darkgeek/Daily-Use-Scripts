@@ -26,5 +26,9 @@ cower -ddf --color=auto $PKG_NAME
 if [ $? -eq 0 ];then
     echo === Building ===
     cd $PKG_NAME 
-    makepkg -sCcfi
+    if [[ "$ARCH" == "armv7l" ]]; then
+        makepkg -sACcfi
+    else
+        makepkg -sCcfi
+    fi
 fi
