@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/pulseaudio -nF
+#!/usr/bin/pulseaudio -nF
 #
 # This file is part of PulseAudio.
 #
@@ -35,13 +35,19 @@ load-module module-switch-on-port-available
 ### Load audio drivers statically
 ### (it's probably better to not load these drivers manually, but instead
 ### use module-udev-detect -- see below -- for doing this automatically)
+#load-module module-alsa-sink
+#load-module module-alsa-source device=hw:1,0
+#load-module module-oss device="/dev/dsp" sink_name=output source_name=input
+#load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
 #load-module module-null-sink
 #load-module module-pipe-sink
 
 ### Automatically load driver modules depending on the hardware available
-.ifexists module-detect.so
+.ifexists module-udev-detect.so
+load-module module-udev-detect
+.else
 ### Use the static hardware detection module (for systems that lack udev support)
-#load-module module-detect
+load-module module-detect
 .endif
 
 ### Automatically connect sink and source if JACK server is present
@@ -51,6 +57,14 @@ load-module module-jackdbus-detect channels=2
 .fail
 .endif
 
+### Automatically load driver modules for Bluetooth hardware
+.ifexists module-bluetooth-policy.so
+load-module module-bluetooth-policy
+.endif
+
+.ifexists module-bluetooth-discover.so
+load-module module-bluetooth-discover
+.endif
 
 ### Load several protocols
 .ifexists module-esound-protocol-unix.so
@@ -62,6 +76,7 @@ load-module module-native-protocol-unix
 ### here if you plan to use paprefs)
 #load-module module-esound-protocol-tcp
 #load-module module-native-protocol-tcp
+#load-module module-zeroconf-publish
 
 ### Load the RTP receiver module (also configured via paprefs, see above)
 #load-module module-rtp-recv
@@ -123,6 +138,8 @@ load-module module-filter-apply
 ### Make some devices default
 #set-default-sink output
 #set-default-source input
+#load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=auto_null.monitor record=true port=8100
+#load-module module-null-sink sink_name=rtp format=s16be channels=2 rate=44100 sink_properties="device.description='RTP Multicast Sink'"
+#load-module module-rtp-send source=rtp.monitor destination_ip=225.0.0.1 port=47777 loop=1
+#load-module module-tunnel-sink-new sink_name="remote" server=192.168.0.110 channels=2 rate=48000
 load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;192.168.0.0/24 auth-anonymous=1
-load-module module-null-sink sink_name=rtp format=s16be channels=2 rate=44100 sink_properties="device.description='RTP Multicast Sink'"
-load-module module-rtp-send source=rtp.monitor destination_ip=127.0.0.1 port=47777 loop=1
