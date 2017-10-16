@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+pulseaudio --kill
+pulseaudio --start
+
+echo The module-tunnel-source-new module can only be loaded after pulseaudio server starts, or it won't work...
+pacmd load-module module-tunnel-source-new server=192.168.0.111 channels=2 rate=48000 source=auto_null.monitor source_name=remote

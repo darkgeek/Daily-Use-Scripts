@@ -124,7 +124,9 @@ load-module module-filter-apply
 #set-default-sink output
 #set-default-source input
 #load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;192.168.0.0/24 auth-anonymous=1
-load-module module-tunnel-source-new server=192.168.0.111 channels=2 rate=48000 source=auto_null.monitor source_name=remote
-#load-module module-null-sink sink_name=rtp format=s16be channels=2 rate=44100 sink_properties="device.description='RTP Multicast Sink'"
-#load-module module-rtp-send source=rtp.monitor destination_ip=127.0.0.1 port=47777 loop=1
-load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=remote record=true port=8100
+#load-module module-tunnel-source-new server=192.168.0.111 channels=2 rate=48000 source=auto_null.monitor source_name=remote
+load-module module-null-sink sink_name=rtp format=s16be channels=2 rate=44100 sink_properties="device.description='RTP Multicast Sink'"
+load-module module-rtp-send source=rtp.monitor destination_ip=127.0.0.1 port=47777 loop=1
+load-module module-switch-on-connect
+#load-module module-loopback source=remote sink=rtp latency_msec=1
+#load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=remote record=true port=8100
