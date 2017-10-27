@@ -3,6 +3,9 @@
 
 CURRENT_DIR=`dirname "$0"`
 SCRIPT_NAME=`basename "$0"`
+AUDIO_PORT=8100
+SAMPLE_RATE=48000
+BUFFER_MS=50
 
 function print_help {
     echo "Usage: $CURRENT_DIR/$SCRIPT_NAME [play|stop] [producer_ip]"
@@ -14,7 +17,7 @@ if [[ "$1" == "play" ]]; then
         echo Missing producer ip. Aborted.
         exit 1
     fi
-    am startservice --user 0 -a com.kaytat.simpleprotocolplayer.action.PLAY -e ip_addr $PRODUCER_IP --ei audio_port 8100 --ei sample_rate 48000 --ez stereo true --ei buffer_ms 40 com.kaytat.simpleprotocolplayer/.MusicService
+    am startservice --user 0 -a com.kaytat.simpleprotocolplayer.action.PLAY -e ip_addr $PRODUCER_IP --ei audio_port $AUDIO_PORT --ei sample_rate $SAMPLE_RATE --ez stereo true --ei buffer_ms $BUFFER_MS com.kaytat.simpleprotocolplayer/.MusicService
 elif [[ $1 == "stop" ]]; then
     am startservice --user 0 -a com.kaytat.simpleprotocolplayer.action.STOP com.kaytat.simpleprotocolplayer/.MusicService
 else
