@@ -2,7 +2,7 @@
 #
 # Helper functions for cower
 
-WORKING_DIR=$HOME/Shares/buildzone
+WORKING_DIR=/tmp/buildZone/
 ARCH=`uname -m`
 
 if [ ! -d "$WORKING_DIR" ]; then
