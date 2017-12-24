@@ -138,8 +138,6 @@ load-module module-filter-apply
 ### Make some devices default
 #set-default-sink output
 #set-default-source input
-#load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=auto_null.monitor record=true port=8100
-#load-module module-null-sink sink_name=rtp format=s16be channels=2 rate=44100 sink_properties="device.description='RTP Multicast Sink'"
-#load-module module-rtp-send source=rtp.monitor destination_ip=225.0.0.1 port=47777 loop=1
-#load-module module-tunnel-sink-new sink_name="remote" server=192.168.0.110 channels=2 rate=48000
-load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;192.168.0.0/24 auth-anonymous=1
+load-module module-null-sink sink_name=network_sink sink_properties=device.description=Network-Stream-Sink
+load-module module-loopback source="network_sink.monitor" sink="alsa_output.platform-sound.stereo-fallback"
+load-module module-simple-protocol-tcp rate=48000 format=s16le channels=2 source=network_sink.monitor record=true port=8100
