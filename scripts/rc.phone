@@ -8,6 +8,9 @@ function init_services {
 
     echo start $HOME/bin/startup.sh...
     start-stop-daemon -n ss-local -S -x $HOME/bin/startup.sh > $HOME/proot.log 2>&1 &
+
+    echo start syncthing...
+    start-stop-daemon -n syncthing -S -x syncthing > $HOME/syncthing.log 2>&1 &
 }
 
 function kill_services {
@@ -20,6 +23,9 @@ function kill_services {
     echo stop $HOME/bin/startup.sh...
     start-stop-daemon -n ss-local -K
     start-stop-daemon -n privoxy -K
+
+    echo stop syncthing...
+    start-stop-daemon -n syncthing -K
 }
 
 function show_help {
