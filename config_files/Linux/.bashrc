@@ -23,8 +23,8 @@ export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 
-export GDK_SCALE=1.9
-export GDK_DPI_SCALE=1.9
+#export GDK_SCALE=1.9
+#export GDK_DPI_SCALE=1.9
 
 # Bind Ctrl-Left and Ctrl-Right to word jumping in line editing
 bind '"\e[1;5D": shell-backward-word'
