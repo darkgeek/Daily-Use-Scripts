@@ -3,25 +3,19 @@
 SCRIPT_NAME=`basename "$0"`
 
 function init_services {
-    echo start sshd...
-    start-stop-daemon -n sshd -S -x sshd
+    #echo start sshd...
+    #start-stop-daemon -n sshd -S -x sshd
 
     echo start syncthing...
-    start-stop-daemon -n syncthing -S -x syncthing > /data/data/com.termux/files/home/syncthing.log 2>&1 &
-
-    echo start keepass db services...
-    cd $HOME/Sync && python -m http.server 8899 > $HOME/keepass_access.log 2>&1 &
+    start-stop-daemon -n syncthing -S -x syncthing -- -gui-address=127.0.0.1:8385 -no-browser > /data/data/com.termux/files/home/syncthing.log 2>&1 &
 }
 
 function kill_services {
-    echo stop sshd...
-    start-stop-daemon -n sshd -K
+    #echo stop sshd...
+    #start-stop-daemon -n sshd -K
 
     echo stop syncthing...
     start-stop-daemon -n syncthing -K
-
-    echo stop keepass db services...
-    start-stop-daemon -n python -K
 }
 
 function show_help {
@@ -58,4 +52,3 @@ do
             ;;
     esac
 done
-
