@@ -11,8 +11,8 @@ fi
 
 function install_cower {
     echo === cower is not available in your PATH, so I try to install it ===
-    if [[ "$ARCH" == "armv7l" ]]; then
-        pacman -S cower
+    if [[ "$ARCH" == "armv7l" || "$ARCH" == "aarch64" ]]; then
+        sudo pacman -S cower
     else
         cd $WORKING_DIR
         git clone https://aur.archlinux.org/cower.git
