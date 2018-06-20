@@ -1,13 +1,9 @@
 . /etc/ksh.kshrc
 
-PKG_PATH=http://mirror.internode.on.net/pub/OpenBSD/snapshots/packages/`machine -a`/
-#PKG_PATH=https://stable.mtier.org/updates/$(uname -r)/$(arch -s):${PKG_PATH}
-export PKG_PATH
-
 export PAGER=less
 export EDITOR=vim
 export HISTFILE=$HOME/.ksh_history
-export PATH=$PATH:/usr/local/jdk-1.7.0/bin/
+export PATH=$PATH:/usr/local/jdk-1.8.0/bin/
 
 #gls is required to be installed via pkg_add -v coreutils
 alias ls='gls --color=auto'
@@ -29,10 +25,20 @@ elif [ $TERM = 'xterm-256color' ];then
 fi
 
 if [ $USER = 'root' ];then
-	export PS1='\n\u@\h.\[$(tput setaf 1)\]\l\[$(tput op)\\n\w \\$ '
+	export PS1='\n\u@\h.\[$(tput setaf 1)\]\l\[$(tput op)\\n🕒 `date "+%m-%d %H:%M:%S"` 👉 \w \\$ '
 else	
-	export PS1='\n\u@\h.\[$(tput setaf 2)\]\l\[$(tput op)\\n\w \\$ '
+	export PS1='\n\u@\h.\[$(tput setaf 2)\]\l\[$(tput op)\\n🕒 `date "+%m-%d %H:%M:%S"` 👉 \w \\$ '
 fi
 
 set -o csh-history
 set -o emacs
+
+# Try to start ssh-agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
+fortune | cowsay
