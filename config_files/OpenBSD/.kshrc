@@ -3,7 +3,7 @@
 export PAGER=less
 export EDITOR=vim
 export HISTFILE=$HOME/.ksh_history
-export PATH=$PATH:/usr/local/jdk-1.8.0/bin/
+export PATH=$PATH:/usr/local/jdk-1.8.0/bin/:$HOME/Apps/bin
 
 #gls is required to be installed via pkg_add -v coreutils
 alias ls='gls --color=auto'
@@ -41,4 +41,4 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
-fortune | cowsay
+fortune | cowsay | lolcat -t
