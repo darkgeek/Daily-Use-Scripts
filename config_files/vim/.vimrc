@@ -1,7 +1,9 @@
 " Disable vi compatibility
 set nocompatible
-" Show line number
-set nu
+" Show absolute line number
+set number
+" Show relative line number
+set relativenumber
 " Enable syntax
 syntax on
 " Auto indent
@@ -61,7 +63,7 @@ set hidden
 set switchbuf=useopen
 
 " Save read-only file after editing
-command Sudow w !sudo tee % >/dev/null
+command Sudow w !doas tee % >/dev/null
 
 " Navigate through buffers
 nmap <C-l> :bnext<CR>
