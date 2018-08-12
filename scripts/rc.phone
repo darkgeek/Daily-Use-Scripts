@@ -7,10 +7,10 @@ function init_services {
     start-stop-daemon -n sshd -S -x sshd
 
     echo start syncthing...
-    termux-chroot syncthing > ~/syncthing.log 2>&1 &
+    syncthing > ~/syncthing.log 2>&1 &
 
     echo start shadowsocks-go...
-    shadowsocks-local -c ~/Shares/private/shadowsocks/config.json > ~/shadowsocks-go.log 2>&1 &
+    ~/go/bin/shadowsocks-local -c ~/Shares/private/shadowsocks/config.json > ~/shadowsocks-go.log 2>&1 &
 
     echo start privoxy...
     privoxy --no-daemon ~/../usr/etc/privoxy/config > privoxy.log 2>&1 &
@@ -20,9 +20,8 @@ function kill_services {
     echo stop sshd...
     start-stop-daemon -n sshd -K
 
-    echo stop sshd...
+    echo stop syncthing...
     start-stop-daemon -n syncthing -K
-    pkill -9 proot
 
     echo stop shadowsocks-go...
     pkill -f -9 shadowsocks-local
